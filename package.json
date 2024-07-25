@@ -1,0 +1,17 @@
+{
+  "name": "es6-practice-questions-lenizeramos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "book": "nodemon ES6-Basics/day1-books.js",
+    "sales": "nodemon ES6-Basics/day1-salesTax.js", 
+    "social": "nodemon ES6-Basics/day1-socialNetwork.js", 
+    "array": "nodemon ES6-Part2/day2-array.js",
+
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
