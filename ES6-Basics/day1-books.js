@@ -35,6 +35,12 @@ const books = [
     year: 1951,
     genres: ["Fiction", "Classics"],
   },
+  {
+    title: "The Catcher in the Rye",
+    author: "J.D. Salinger",
+    year: 1951,
+    genres: ["Fiction", "Classics"],
+  },
 ];
 
 // Example
@@ -43,40 +49,76 @@ const books = [
 const scienceFictionBooks = books.filter((book) =>
   book.genres.includes("Science Fiction")
 );
-console.log(scienceFictionBooks);
+//console.log(scienceFictionBooks);
 
 //**2. Sort by Year:**
 
-//const sortedBooksByYear =
+const sortedBooksByYear = books.toSorted((a, b) => {
+  return a.year - b.year;
+});
+//console.log(sortedBooksByYear);
 
 //**3. Total Books Published:**
 
-//const totalBooks =
+const totalBooks = books.reduce((accumulator) => {
+  return accumulator + 1;
+}, 0);
+//console.log(totalBooks);
+//const totalBooksLength = books.length;
+//console.log(totalBooksLength);
 
 //**4. List Authors:**
-
-//const uniqueAuthors =
+/*
+const authors = books.map((book) => book.author) // extrai os autores do array books
+const uniqueAuthors = new Set(authors) // pego o set desse novo array criado
+*/
+const uniqueAuthors = new Set(
+  books.map((book) => {
+    return book.author;
+  })
+);
+//console.log(uniqueAuthors);
 
 //**5. Find Classics:**
 
-//const firstClassicBook =
+const firstClassicBook = books.find((book) => {
+  return book.genres.includes("Classics");
+});
+//console.log(firstClassicBook);
 
 //**6. Titles with Length:**
 
-//const longTitles =
+const longTitles = books
+  .filter((book) => {
+    return book.title.length > 15;
+  })
+  .map((book) => book.title);
+
+//console.log(longTitles);
 
 //**7. Group by Genre:**
 
-//const booksGroupedByGenre =
+const booksGroupedByGenre = 
+console.log(booksGroupedByGenre);
 
 //**8. Oldest Book:**
 
-//const oldestBook =
+const oldestBook = books.reduce((oldest, currentBook) => {
+  if (oldest.year > currentBook.year) {
+    return currentBook;
+  }
+  return oldest;
+});
+//console.log(oldestBook);
 
 //**9. Book Descriptions:**
 
-//const bookDescriptions =
+const bookDescriptions = books.map((book) => {
+  return `${book.title} by ${book.author} (${book.year}).`;
+});
+//console.log(bookDescriptions);
 
 //**10. Remove Duplicates:**
 
-//const uniqueTitleBooks =
+const uniqueTitleBooks = new Set(books.map((book) => {return book.title}))
+console.log(uniqueTitleBooks);
