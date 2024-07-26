@@ -25,14 +25,27 @@ const companySalesData = [
     sales: [80, 20, 10, 100, 90, 500],
   },
   {
-    name: "Telus",
+    name: "Microsoft",
     province: "SK",
     sales: [500, 100],
   },
 ];
 
 const calculateSalesTax = function (salesData, taxRates) {
-  // Implement your code here
+  let companyInformation = salesData.reduce((acc, company) => {
+    let salesAndTax = {};
+    salesAndTax["totalSales"] = company.sales.reduce(
+      (sum, sale) => sum + sale,
+      0
+    );
+    salesAndTax["totalTax"] =
+      salesAndTax.totalSales * taxRates[company.province];
+    acc[company.name] = salesAndTax;
+
+    return acc;
+  }, {});
+
+  return companyInformation;
 };
 
 console.log(calculateSalesTax(companySalesData, salesTaxRates));
@@ -43,6 +56,10 @@ console.log(calculateSalesTax(companySalesData, salesTaxRates));
     totalTax: value
   },
   Bombardier: {
+    totalSales: value,
+    totalTax: value
+  },
+  Microsoft: {
     totalSales: value,
     totalTax: value
   }
