@@ -49,3 +49,20 @@ const data = {
     follows: ["f05"],
   },
 };
+
+const biggestFollower = function (data) {
+  let maxFollows = 0;
+  let biggestFollower = "";
+  for (let user in data) {
+    const followsCount = data[user].follows.length;
+    console.log(data[user].name + " is following " + followsCount);
+
+    if (followsCount > maxFollows) {
+      maxFollows = followsCount;
+      biggestFollower = data[user].name;
+    }
+  }
+return biggestFollower
+};
+
+console.log(biggestFollower(data));

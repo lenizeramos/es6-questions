@@ -35,12 +35,6 @@ const books = [
     year: 1951,
     genres: ["Fiction", "Classics"],
   },
-  {
-    title: "The Catcher in the Rye",
-    author: "J.D. Salinger",
-    year: 1951,
-    genres: ["Fiction", "Classics"],
-  },
 ];
 
 // Example
@@ -64,6 +58,7 @@ const totalBooks = books.reduce((accumulator) => {
   return accumulator + 1;
 }, 0);
 //console.log(totalBooks);
+
 //const totalBooksLength = books.length;
 //console.log(totalBooksLength);
 
@@ -98,13 +93,22 @@ const longTitles = books
 
 //**7. Group by Genre:**
 
-const booksGroupedByGenre = 
-console.log(booksGroupedByGenre);
+const booksGroupedByGenre = books.reduce((booksGrouped, currentBook) => {
+  currentBook.genres.forEach((genre) => {
+    if (!booksGrouped.hasOwnProperty(genre)) {
+      booksGrouped[genre] = []; // nao tem como acessar uma propriedade por um ponto(dot notation) se a prop ainda nao existe, por isso acessamos como se fosse um vetor. eh como se eu tivesse dizendo crie essa propriedade e atribua esse valor.
+    }
+    booksGrouped[genre].push(currentBook);
+  });
+  return booksGrouped;
+}, {});
+
+//console.log(booksGroupedByGenre);
 
 //**8. Oldest Book:**
 
 const oldestBook = books.reduce((oldest, currentBook) => {
-  if (oldest.year > currentBook.year) {
+  if (oldest.year > currentBook["year"]) {
     return currentBook;
   }
   return oldest;
@@ -120,5 +124,13 @@ const bookDescriptions = books.map((book) => {
 
 //**10. Remove Duplicates:**
 
-const uniqueTitleBooks = new Set(books.map((book) => {return book.title}))
-console.log(uniqueTitleBooks);
+//const uniqueTitleBooks = new Set(books.map((book) => {return book.title}))
+
+const uniqueTitleBooks = books.reduce((titles, currentBook) => {
+  if (!titles.includes(currentBook.title)) {
+    titles.push(currentBook.title);
+  }
+  return titles;
+}, []);
+
+//console.log(uniqueTitleBooks);
