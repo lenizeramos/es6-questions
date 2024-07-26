@@ -32,10 +32,29 @@ const companySalesData = [
 ];
 
 const calculateSalesTax = function (salesData, taxRates) {
-  // Implement your code here
+  const companyObject = {};
+
+  salesData.map((company) => {
+    const { name, province, sales } = company;
+    const totalSales = sales.reduce((sum, sale) => {
+      return sum + sale;
+    }, 0);
+    //console.log(totalSales)
+    const totalTax = totalSales * taxRates[province];
+    //console.log(totalTax)
+    if (!companyObject[name]) {
+      companyObject[name] = {
+        totalSales: totalSales,
+        totalTax: totalTax,
+      };
+    }
+    //console.log(companyObject)
+  });
+  return companyObject
 };
 
 console.log(calculateSalesTax(companySalesData, salesTaxRates));
+
 /*
 {
   Telus: {
@@ -43,6 +62,10 @@ console.log(calculateSalesTax(companySalesData, salesTaxRates));
     totalTax: value
   },
   Bombardier: {
+    totalSales: value,
+    totalTax: value
+  },
+  Microsoft: {
     totalSales: value,
     totalTax: value
   }
