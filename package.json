@@ -8,6 +8,11 @@
     "sales": "nodemon ES6-Basics/day1-salesTax.js", 
     "social": "nodemon ES6-Basics/day1-socialNetwork.js", 
     "array": "nodemon ES6-Part2/day2-array.js",
+    "closure": "nodemon ES6-Part3/day3-closure.js",
+    "function": "nodemon ES6-Part3/day3-function-callback-recursion-closures.js",
+    "object": "nodemon ES6-Part3/day3-object-method-this.js",
+    "recursion": "nodemon ES6-Part3/day3-recursion.js",
+    "spread": "nodemon ES6-Part3/day3-spread-rest-operator.js",
 
     "test": "echo \"Error: no test specified\" && exit 1"
   },

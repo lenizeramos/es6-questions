@@ -1,18 +1,6 @@
 /*
 Implement solutions to the following questions/problems by writing functions for each one:
-Instruction
-Implement a function biggestFollower() which returns the name of the individual who follows the most people.
-Instruction
-Implement mostPopular() which returns the name of the most popular (most followed) individual.
-Instruction
-Implement printAll() which outputs a list of everyone and for each of them, the names of who they follow and who follows them.
-Instruction
-Implement unrequitedFollowers() which returns a list of names for those who follow someone that doesn't follow them back.
-Instruction
-Implement some or all these remaining functions.
-Identify who has the most followers over 30
-Identify who follows the most people over 30
-List everyone and their reach (sum of # of followers and # of followers of followers)
+
 Tips
 You are encouraged to create some additional functions in order to avoid having very large functions that try to do everything. That said, be sure to name them well. All this may sound familiar - that's because it was covered recently as part of our Function Best Practices.
  */
@@ -50,6 +38,11 @@ const data = {
   },
 };
 
+/*
+Instruction
+Implement a function biggestFollower() which returns the name of the individual who follows the most people.
+*/
+
 const biggestFollower = function (data) {
   let maxFollows = 0;
   let biggestFollower = "";
@@ -65,4 +58,39 @@ const biggestFollower = function (data) {
 return biggestFollower
 };
 
-console.log(biggestFollower(data));
+//console.log(biggestFollower(data));
+
+/*
+Instruction
+Implement mostPopular() which returns the name of the most popular (most followed) individual.
+*/
+
+const mostPopular = function (data) {
+  return
+}
+console.log(mostPopular())
+/*
+Instruction
+Implement printAll() which outputs a list of everyone and for each of them, the names of who they follow and who follows them.
+*/
+
+const printAll = function (data) {
+  return
+}
+console.log(printAll())
+
+/*
+Instruction
+Implement unrequitedFollowers() which returns a list of names for those who follow someone that doesn't follow them back.
+*/
+const unrequitedFollowers = function (data) {
+  return
+}
+console.log(unrequitedFollowers())
+/*
+Instruction
+Implement some or all these remaining functions.
+Identify who has the most followers over 30
+Identify who follows the most people over 30
+List everyone and their reach (sum of # of followers and # of followers of followers)
+*/

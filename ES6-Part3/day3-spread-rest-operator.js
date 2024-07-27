@@ -5,17 +5,24 @@ const person1 = { name: "Alice", age: 25, city: "New York" };
 const person2 = { age: 30, job: "Engineer" };
 
 //1. **Combine Arrays:**
-//const combinedFruits =
+const combinedFruits = [...fruitBasket, ...additionalFruits];
+
+//console.log(`combinedFruits: ${combinedFruits}`)
 
 //2. **Clone an Array:**
-//const copiedFruitBasket =
+const copiedFruitBasket = [...fruitBasket];
+//console.log(`copiedFruitBasket: ${copiedFruitBasket}`)
 
 //3. **Spread in Object:**
-//const updatedStudentInfo =
+const updatedStudentInfo = { ...studentInfo, grade: 100 };
+//console.log(updatedStudentInfo)
 
 //4. **Rest Parameters in Function:**
-//function sumNumbers() {}
+function sumNumbers(...numbers) {
+  return numbers.reduce((sum, currentNumber) => sum + currentNumber, 0);
+}
 
+console.log(sumNumbers(57, 8, 9, 14));
 //5. **Spread in Function Call:**
 //function exampleFunction() {}
 
