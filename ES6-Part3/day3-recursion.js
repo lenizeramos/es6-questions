@@ -1,6 +1,6 @@
 //Print only items (emojis) in the console. Not the arrays.
 let count = 0;
-function printItems(array) {
+const printItems = function (array) {
   count++;
   console.log(count);
   for (const element of array) {
