@@ -12,10 +12,32 @@ function applyCallbackToNumbers(arr, callback) {
 }
 
 // 2. Recursion - Factorial Calculation
-//function calculateFactorial(n) {}
+function calculateFactorial(n) {
+  if (n < 0) {
+    return "Factorial is not defined for negative numbers";
+  }
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  /*
+  let result = 1;
+  for (let i = n; i > 0; i--) {
+    console.log(i)
+   console.log(result *= i);
+  }
+  return result;
+  */
+  return n * calculateFactorial(n - 1);
+}
 
 // 3. Closures - Counter for Numbers
-//function createCounter() {}
+function createCounter() {
+  let count = 0
+  return function () {
+    count++
+    return count
+  }
+}
 
 // 4. Map Using Callback for Numbers
 //function customMap(arr, callback) {}
@@ -39,9 +61,9 @@ function applyCallbackToNumbers(arr, callback) {
 // function simulateAsyncOperation(callback) {}
 
 // Example usage:
-const numberCallback = (num) => num * 2;
-// const factorialResult = calculateFactorial(5);
-// const counter = createCounter();
+//const numberCallback = (num) => num * 2;
+// const factorialResult = calculateFactorial(4);
+const counter = createCounter();
 // const fibonacciResult = calculateFibonacci(6);
 // const employeeCounter = createEmployeeCounter();
 // const sortedEmployees = customSortBySalary(employees);
@@ -50,9 +72,9 @@ const numberCallback = (num) => num * 2;
 //   console.log(result);
 // });
 
-console.log(applyCallbackToNumbers(numbers, numberCallback));
-// console.log(factorialResult);
-// console.log(counter());
+//console.log(applyCallbackToNumbers(numbers, numberCallback));
+//console.log(factorialResult);
+console.log(counter());
 // console.log(customMap(numbers, (num) => num * 3));
 // console.log(customFilter(numbers, (num) => num % 2 === 0));
 // console.log(calculateTotalSalary(employees));
