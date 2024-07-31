@@ -85,6 +85,7 @@ const mostPopular = function (data) {
   return mostPopularName;
 };
 //console.log(mostPopular(data));
+
 /*
 Instruction
 Implement printAll() which outputs a list of everyone and for each of them, the names of who they follow and who follows them.
@@ -136,6 +137,7 @@ const unrequitedFollowers = function (data) {
 Instruction
 Implement some or all these remaining functions.
 Identify who has the most followers over 30
+<<<<<<< HEAD
 */
 const mostFollowersOver30 = (data) => {
   let nameOfFollowersOver30 = "nameOfFollowersOver30";
