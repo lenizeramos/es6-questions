@@ -85,12 +85,14 @@ const mostPopular = function (data) {
   return mostPopularName;
 };
 //console.log(mostPopular(data));
+
 /*
 Instruction
 Implement printAll() which outputs a list of everyone and for each of them, the names of who they follow and who follows them.
 */
 
 const printAll = function (data) {
+<<<<<<< HEAD
   for (const userId in data) {
     let followIds = data[userId].follows;
     //console.log(followIds);
@@ -120,6 +122,7 @@ Instruction
 Implement unrequitedFollowers() which returns a list of names for those who follow someone that doesn't follow them back.
 */
 const unrequitedFollowers = function (data) {
+<<<<<<< HEAD
   let doNotFollowBack = new Set();
   for (const userId in data) {
     data[userId].follows.forEach((element) => {
@@ -136,6 +139,7 @@ const unrequitedFollowers = function (data) {
 Instruction
 Implement some or all these remaining functions.
 Identify who has the most followers over 30
+<<<<<<< HEAD
 */
 const mostFollowersOver30 = (data) => {
   let nameOfFollowersOver30 = "nameOfFollowersOver30";
