@@ -92,7 +92,6 @@ Implement printAll() which outputs a list of everyone and for each of them, the 
 */
 
 const printAll = function (data) {
-<<<<<<< HEAD
   for (const userId in data) {
     let followIds = data[userId].follows;
     //console.log(followIds);
@@ -122,7 +121,6 @@ Instruction
 Implement unrequitedFollowers() which returns a list of names for those who follow someone that doesn't follow them back.
 */
 const unrequitedFollowers = function (data) {
-<<<<<<< HEAD
   let doNotFollowBack = new Set();
   for (const userId in data) {
     data[userId].follows.forEach((element) => {
